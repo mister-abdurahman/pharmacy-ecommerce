@@ -7,7 +7,7 @@ import Link from "next/link";
 
 function Hero() {
   return (
-    <div className="relative mt-2 bg-heroImage sm:bg-none sm:bg-brand_green_700 w-full h-80">
+    <div className="relative mt-2 bg-heroImage sm:bg-none sm:bg-primary w-full h-80">
       <div className="flex flex-col items-start absolute z-10 top-1/2 -translate-y-1/2 left-4">
         <h1 className="text-4xl font-semibold text-white sm:mb-1 mb-3">
           Get Affordable <br className="block sm:hidden" /> Health Solutions
@@ -18,7 +18,7 @@ function Hero() {
           is a prescription for savings.
         </p>
         <Link href="/products">
-          <Button className="flex items-center bg-white text-green-700 hover:bg-green-700 hover:text-white">
+          <Button className="flex items-center bg-black hover:bg-gray-700">
             <FaBagShopping /> Start Shopping{" "}
           </Button>
         </Link>

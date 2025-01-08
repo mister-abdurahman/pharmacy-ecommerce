@@ -11,7 +11,7 @@ import {
 } from "./ui/select";
 import { IoSearchOutline } from "react-icons/io5";
 import { FaCartPlus } from "react-icons/fa6";
-import { MdAddIcCall } from "react-icons/md";
+import { MdAddIcCall, MdDarkMode } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Button } from "./ui/button";
 import Link from "next/link";
@@ -23,14 +23,16 @@ import CategoryList from "@/ui/Header/CategoryList";
 import SearchBox from "@/ui/Header/SearchBox";
 import SmallSearchBox from "@/ui/Header/SmallSearchBox";
 import { SidebarTrigger } from "./ui/sidebar";
+import { LOGO } from "@/lib/constants";
+import DarkModeToggler from "@/ui/Header/DarkModeToggler";
 
 async function Header() {
   const categories = await getCategorys();
   return (
-    <header className="px-3 sm:px-8">
+    <header className="px-3 sm:px-8 dark:bg-slate-700">
       <div className="flex items-center justify-between py-2">
         <figure>
-          <Image src={aspire} alt="logo image" className="w-40 h-16" />
+          <Image src={LOGO} alt="logo image" className="w-40 h-16" />
         </figure>
         <SearchBox />
         <div className="flex gap-5 items-center">
@@ -39,6 +41,7 @@ async function Header() {
           <Button variant="outline" className="hidden sm:block">
             Login/Register
           </Button>
+          <DarkModeToggler />
         </div>
       </div>
       <div className="flex items-center sm:hidden justify-between gap-6">

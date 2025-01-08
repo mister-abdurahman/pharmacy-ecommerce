@@ -1,7 +1,8 @@
 import { IAvailableLocation } from "./types";
+import tate from "@/assets/images/Tate Pharmacy.png";
 
 export const CURRENCY = "₦";
-export const BRAND_COLOR = "";
+export const LOGO = tate;
 export const availableLocationsList: IAvailableLocation[] = [
   {
     state: "Edo",

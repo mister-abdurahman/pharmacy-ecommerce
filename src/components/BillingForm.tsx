@@ -43,9 +43,11 @@ const FormSchema = z.object({
   city: z.string().min(2).max(50),
   state: z.string().min(2).max(50),
   phoneNumber: z
-    .number()
-    .refine((value) => !isNaN(Number(value)), { message: "Must be a number" })
-    .transform((value) => Number(value)),
+    .string()
+    .min(2)
+    .max(20)
+    .refine((val) => !isNaN(Number(val)), { message: "Must be a valid number" })
+    .transform((val) => Number(val)),
   email: z.string().min(2).max(50).email(),
   otherNotes: z.string().optional(),
 });
@@ -202,7 +204,7 @@ export function BillingForm() {
                     <Input
                       type="number"
                       placeholder="Phone Number"
-                      onChange={(e) => field.onChange(e.target.valueAsNumber)}
+                      // onChange={(e) => field.onChange(e.target.valueAsNumber)}
                       {...field}
                     />
                   </FormControl>

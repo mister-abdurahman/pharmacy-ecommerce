@@ -41,12 +41,12 @@ function VerifyPaymentUI() {
                   "Your payment has been confirmed and your order is processing...",
               });
             } else {
+              router.push("/checkout");
               toast({
                 title: "Transaction was unsuccessful",
                 description:
                   "Sorry the inconvenience, Check your network and try again",
               });
-              router.push("/checkout");
             }
           })
       : null;

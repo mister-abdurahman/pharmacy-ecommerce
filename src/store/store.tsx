@@ -34,7 +34,7 @@ const defaultValue: IProps = {
 
 export const MyContext = React.createContext(defaultValue);
 
-export const queryClient = new QueryClient();
+// export const queryClient = new QueryClient();
 
 export const MyContextProvider = function ({ children }) {
   const [cart, setCart] = useState(() => {

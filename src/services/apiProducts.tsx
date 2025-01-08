@@ -105,6 +105,18 @@ export async function getCategorys(): Promise<ICategory[]> {
     return error;
   }
 }
+export async function getProductsByTag(tagName: string) {
+  const { data, error } = await supabase.rpc("get_products_by_tag", {
+    tag_name: tagName,
+  });
+
+  if (error) {
+    console.error("Error fetching products by tag:", error);
+    return null;
+  }
+
+  return data;
+}
 
 // CREATE OR REPLACE FUNCTION search_products_04(search_term TEXT)
 // RETURNS TABLE(
@@ -132,3 +144,22 @@ export async function getCategorys(): Promise<ICategory[]> {
 // $$ LANGUAGE plpgsql;
 
 // SELECT * FROM search_products_04('Over');
+
+//
+// CREATE OR REPLACE FUNCTION get_products_by_tag(tag_name TEXT)
+// RETURNS TABLE (
+//   id INT8,
+//   name TEXT,
+//   price INT4,
+//   status boolean,
+//   img_url TEXT
+// ) AS $$
+// BEGIN
+//   RETURN QUERY
+//   SELECT p.id AS id , p.name AS name, p.price AS price, p.status AS status, p.img_url AS img_url
+//   FROM products p
+//   JOIN product_tags pt ON p.id = pt.product_id
+//   JOIN tags t ON pt.tag_id = t.id
+//   WHERE t.name = tag_name;
+// END;
+// $$ LANGUAGE plpgsql;

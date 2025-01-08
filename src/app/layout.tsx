@@ -3,11 +3,13 @@ import "../styles/globals.css";
 import { Nunito } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { MyContextProvider, queryClient } from "@/store/store";
+import { MyContextProvider } from "@/store/store";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
+import { ThemeContextProvider } from "@/store/themeStore";
+import ThemedBody from "@/components/ThemedBody";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -21,19 +23,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={nunito.className}>
-      <QueryClientProvider client={queryClient}>
-        <MyContextProvider>
-          <SidebarProvider>
-            <body className="h-screen flex flex-col">
-              <AppSidebar />
+      <MyContextProvider>
+        <ThemeContextProvider>
+          <ThemedBody>
+            <SidebarProvider className="h-screen flex flex-col">
               <Header />
-              <main>{children}</main>
+              <main>
+                <div className="block sm:hidden">
+                  <AppSidebar />
+                </div>
+                {children}
+              </main>
               <Footer />
-              <Toaster />
-            </body>
-          </SidebarProvider>
-        </MyContextProvider>
-      </QueryClientProvider>
+            </SidebarProvider>
+            <Toaster />
+          </ThemedBody>
+        </ThemeContextProvider>
+      </MyContextProvider>
     </html>
   );
   // return (

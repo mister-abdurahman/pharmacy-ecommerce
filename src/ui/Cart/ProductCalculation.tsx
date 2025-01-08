@@ -76,7 +76,7 @@ function ProductCalculation() {
         ) : (
           <Input placeholder="State" />
         )}
-        <Input placeholder="town/city" />
+        {/* <Input placeholder="town/city" /> */}
         {/* <div className="mx-auto">
           <Button variant="outline">Update</Button>
         </div> */}

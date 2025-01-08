@@ -16,17 +16,17 @@ function SearchBox() {
   }
 
   return (
-    <div className="hidden sm:flex basis-full sm:basis-1/3 bg-slate-100 rounded-md border border-gray-300 relative">
+    <div className="hidden sm:flex basis-full sm:basis-1/3 bg-slate-100 rounded-full  border-2 border-gray-300 relative">
       <Input
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
-        className="w-full sm:text-base text-xs"
+        className="w-full sm:text-base text-xs border rounded-full"
         placeholder="Search product name, category, brand..."
       />
       <Button
         onClick={handleSearch}
         variant="default"
-        className="bg-green-600 absolute right-0"
+        className="bg-primary absolute right-0 rounded-full"
       >
         <IoSearchOutline />
       </Button>
