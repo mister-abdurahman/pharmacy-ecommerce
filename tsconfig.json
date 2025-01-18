@@ -23,6 +23,13 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/app/profile/[id]",
+    "src/app/profile/cart"
+  ],
   "exclude": ["node_modules"]
 }

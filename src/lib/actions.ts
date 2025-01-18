@@ -1,11 +1,29 @@
+"use server";
+import { redirect } from "next/navigation";
 import { supabase } from "./supabase";
 
-export async function getProducts() {
-  let { data: Products, error } = await supabase
-    .from("Products")
-    .select("name");
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 
-  if (error) throw new Error("Products could not be fetched!.");
+// export async function getServerSideProps(context) {
+//   const supabase = createServerComponentClient({
+//     cookies: context.req.cookies,
+//   });
+//   const { data: session } = await supabase.auth.getSession();
 
-  return Products;
-}
+//   if (!session) {
+//     return { redirect: { destination: "/login", permanent: false } };
+//   }
+
+//   return { props: { user: session.session.user } };
+// }
+
+// export async function signOut() {
+//   try {
+//     const { error } = await supabase.auth.signOut();
+//     if (error) throw error;
+//     redirect("/");
+//   } catch (error) {
+//     console.error(error);
+//     return error;
+//   }
+// }

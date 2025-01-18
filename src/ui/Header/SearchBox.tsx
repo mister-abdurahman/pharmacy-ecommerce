@@ -16,7 +16,7 @@ function SearchBox() {
   }
 
   return (
-    <div className="hidden sm:flex basis-full sm:basis-1/3 bg-slate-100 rounded-full  border-2 border-gray-300 relative">
+    <div className="hidden sm:flex basis-full sm:basis-1/3 bg-slate-100 rounded-full  border-2 border-primary relative">
       <Input
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}

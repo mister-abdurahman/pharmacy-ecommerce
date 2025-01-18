@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { availableLocationsList, CURRENCY } from "@/lib/constants";
 import { countries, states } from "@/lib/helper";
+import { AuthContext } from "@/store/authStore";
 import { MyContext } from "@/store/store";
 import { useRouter } from "next/navigation";
 import React, { useContext, useEffect, useState } from "react";
@@ -13,13 +14,12 @@ import React, { useContext, useEffect, useState } from "react";
 function ProductCalculation() {
   const router = useRouter();
   const { cart, setShippingAddress, setTotalToPay } = useContext(MyContext);
+  const { user } = useContext(AuthContext);
   const [selectedDelivery, setSelectedDelivery] = useState(
     "Our Pickup store&FREE"
   );
   const [country, setCountry] = useState("Nigeria");
   const [state, setState] = useState("Lagos");
-
-  if (!cart.length) return null;
 
   useEffect(
     function () {
@@ -46,8 +46,10 @@ function ProductCalculation() {
       address: selectedDelivery.split("&")[0],
       price: adjustedSelectedLocationPrice,
     });
-    router.push(`/checkout`);
+    router.push(`/checkout${user && `?id=${user.user.id}`}`);
   }
+
+  if (!cart.length) return null;
 
   return (
     <div className="flex flex-col sm:flex-row gap-4 mx-4 justify-center">

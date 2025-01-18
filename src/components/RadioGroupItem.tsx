@@ -17,7 +17,7 @@ export function RadioGroupDemo({
 }) {
   const [s, setS] = useState("Our Pickup store");
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: any) => {
     // console.log(value);
     setS(event.target.value);
   };

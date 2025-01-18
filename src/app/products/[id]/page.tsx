@@ -5,14 +5,8 @@ import Spinner from "@/components/Spinner";
 import { getCategoryById, getProductById } from "@/services/apiProducts";
 import PageContainer from "@/components/PageContainer";
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
-
-async function page({ params }: PageProps) {
-  const product = await getProductById(params.id);
+async function page({ params }) {
+  const product = await getProductById(+params.id);
   const category = await getCategoryById(product.category_id);
 
   return (
