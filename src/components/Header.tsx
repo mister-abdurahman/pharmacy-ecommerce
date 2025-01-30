@@ -33,7 +33,7 @@ async function Header() {
   const categories = await getCategorys();
   // const isAuthenticated = await isUserAuthenticated();
   return (
-    <header className="px-3 sm:px-8 dark:bg-slate-700">
+    <header className="px-3 sm:px-8 dark:bg-slate-700 pb-3">
       <div className="flex items-center justify-between py-2">
         <figure>
           <Image src={LOGO} alt="logo image" className="w-40 h-16" />

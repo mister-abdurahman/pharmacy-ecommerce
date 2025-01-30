@@ -1,5 +1,5 @@
 import { supabase } from "@/lib/supabase";
-import { ICart, ICategory, IProduct } from "@/lib/types";
+import { IBrand, ICart, ICategory, IProduct } from "@/lib/types";
 import { boolean } from "zod";
 
 export async function getProducts(): Promise<IProduct[]> {
@@ -116,6 +116,40 @@ export async function getProductsByTag(tagName: string) {
   }
 
   return data;
+}
+
+export async function getBrandById(id: number): Promise<IBrand> {
+  try {
+    const { data, error }: { data: unknown; error: any } = await supabase
+      .from("brands")
+      .select("*")
+      .eq("id", id)
+      .single();
+
+    if (error) {
+      throw new Error(error);
+    }
+    return data as IBrand;
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+}
+
+export async function getBrands(): Promise<IBrand[]> {
+  try {
+    const { data, error }: { data: unknown; error: any } = await supabase
+      .from("brands")
+      .select("*");
+
+    if (error) {
+      throw new Error(error);
+    }
+    return data as IBrand[];
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
 }
 
 // CREATE OR REPLACE FUNCTION search_products_04(search_term TEXT)

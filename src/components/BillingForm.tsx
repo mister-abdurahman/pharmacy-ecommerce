@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -20,8 +19,6 @@ import OrderDetails from "@/ui/Order/OrderDetails";
 import { useContext } from "react";
 import { MyContext } from "@/store/store";
 import { handlePayment } from "@/app/api/payment/paystackInteface";
-import { useSearchParams } from "next/navigation";
-import { AuthContext } from "@/store/authStore";
 import { IProfile } from "@/lib/types";
 
 const FormSchema = z.object({
