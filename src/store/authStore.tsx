@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
   // const [user, setUser] = useState<null | Session>(null);
   const [user, setUser] = useState<null | Session>(() => {
     if (typeof window !== "undefined") {
-      const savedAuth = localStorage.getItem("user_session");
+      const savedAuth = localStorage.getItem("tate-pharm_user_session");
       return savedAuth ? JSON.parse(savedAuth) : null;
     }
     return null;
@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
   //   const { data: subscription } = supabase.auth.onAuthStateChange(
   //     (_event, session) => {
   //       setUser(session?.user || null);
-  //       localStorage.setItem("user_session", JSON.stringify(user ?? null));
+  //       localStorage.setItem("tate-pharm_user_session", JSON.stringify(user ?? null));
   //     }
   //   );
   //   return () => subscription.subscription.unsubscribe();
@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchSession = async () => {
-      localStorage.setItem("user_session", JSON.stringify(user));
+      localStorage.setItem("tate-pharm_user_session", JSON.stringify(user));
     };
 
     fetchSession();

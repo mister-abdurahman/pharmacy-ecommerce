@@ -48,7 +48,7 @@ export const MyContextProvider = function ({ children }) {
   const { user } = useContext(AuthContext);
   const [cart, setCart] = useState(() => {
     if (typeof window !== "undefined") {
-      const savedCart = localStorage.getItem("cart");
+      const savedCart = localStorage.getItem("tate-pharm_cart");
       return savedCart ? JSON.parse(savedCart) : [];
     }
     return [];
@@ -56,7 +56,7 @@ export const MyContextProvider = function ({ children }) {
 
   const [totalToPay, setTotalToPay] = useState(() => {
     if (typeof window !== "undefined") {
-      const savedTotalToPay = localStorage.getItem("totalToPay");
+      const savedTotalToPay = localStorage.getItem("tate-pharm_totalToPay");
       return savedTotalToPay ? Number(JSON.parse(savedTotalToPay)) : 0;
     }
     return 0;
@@ -67,7 +67,9 @@ export const MyContextProvider = function ({ children }) {
     price: number;
   }>(() => {
     if (typeof window !== "undefined") {
-      const savedShippingAddress = localStorage.getItem("shippingAddress");
+      const savedShippingAddress = localStorage.getItem(
+        "tate-pharm_shippingAddress"
+      );
       return savedShippingAddress ? JSON.parse(savedShippingAddress) : null;
     }
     return null;
@@ -75,13 +77,16 @@ export const MyContextProvider = function ({ children }) {
 
   useEffect(() => {
     if (cart.length > 0) {
-      localStorage.setItem("cart", JSON.stringify(cart));
+      localStorage.setItem("tate-pharm_cart", JSON.stringify(cart));
     }
     if (shippingAddress) {
-      localStorage.setItem("shippingAddress", JSON.stringify(shippingAddress));
+      localStorage.setItem(
+        "tate-pharm_shippingAddress",
+        JSON.stringify(shippingAddress)
+      );
     }
     if (totalToPay) {
-      localStorage.setItem("totalToPay", JSON.stringify(totalToPay));
+      localStorage.setItem("tate-pharm_totalToPay", JSON.stringify(totalToPay));
     }
   }, [cart, shippingAddress, totalToPay]);
 
@@ -89,7 +94,7 @@ export const MyContextProvider = function ({ children }) {
     function () {
       async function FetchCart() {
         const userCart = await getCartByUserId(user?.user?.id);
-        // localStorage.setItem("cart", JSON.stringify(userCart));
+        // localStorage.setItem("tate-pharm_cart", JSON.stringify(userCart));
         const modifiedCart = await Promise.all(
           userCart.map(async (el) => {
             const product = await getProductById(el.product_id);
@@ -105,7 +110,7 @@ export const MyContextProvider = function ({ children }) {
         );
         console.log("what da heck?!", modifiedCart);
         setCart(modifiedCart);
-        localStorage.setItem("cart", JSON.stringify(modifiedCart));
+        localStorage.setItem("tate-pharm_cart", JSON.stringify(modifiedCart));
       }
 
       if (!user) return;

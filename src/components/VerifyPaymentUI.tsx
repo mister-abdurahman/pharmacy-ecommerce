@@ -50,9 +50,12 @@ function VerifyPaymentUI() {
                   },
                   cart
                 ));
-              localStorage.setItem("cart", JSON.stringify([]));
-              localStorage.setItem("totalToPay", JSON.stringify(0));
-              localStorage.setItem("shippingAddress", JSON.stringify(null));
+              localStorage.setItem("tate-pharm_cart", JSON.stringify([]));
+              localStorage.setItem("tate-pharm_totalToPay", JSON.stringify(0));
+              localStorage.setItem(
+                "tate-pharm_shippingAddress",
+                JSON.stringify(null)
+              );
               setCart([]);
               setShippingAddress(null);
               setTotalToPay(0);
