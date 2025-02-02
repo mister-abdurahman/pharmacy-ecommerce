@@ -23,7 +23,7 @@ import CategoryList from "@/ui/Header/CategoryList";
 import SearchBox from "@/ui/Header/SearchBox";
 import SmallSearchBox from "@/ui/Header/SmallSearchBox";
 import { SidebarTrigger } from "./ui/sidebar";
-import { LOGO } from "@/lib/constants";
+import { LOGO } from "@/_lib/constants";
 import DarkModeToggler from "@/ui/Header/DarkModeToggler";
 import { AuthDialog } from "@/ui/Auth/AuthDialog";
 import AuthUISwitch from "./AuthUISwitch";

@@ -11,6 +11,8 @@ import { AppSidebar } from "@/components/AppSidebar";
 import { ThemeContextProvider } from "@/store/themeStore";
 import ThemedBody from "@/components/ThemedBody";
 import { AuthProvider } from "@/store/authStore";
+import { SessionProvider } from "next-auth/react";
+import SessionWrapper from "@/components/SessionWrapper";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -24,30 +26,29 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={nunito.className}>
-      <AuthProvider>
-        <MyContextProvider>
-          <ThemeContextProvider>
-            <ThemedBody>
-              <SidebarProvider className="h-screen flex flex-col">
-                <Header />
-                <main>
-                  <div className="block sm:hidden">
-                    <AppSidebar />
-                  </div>
-                  {children}
-                </main>
-                <Footer />
-              </SidebarProvider>
-              <Toaster />
-            </ThemedBody>
-          </ThemeContextProvider>
-        </MyContextProvider>
-      </AuthProvider>
+      <body>
+        {/* <SessionWrapper> */}
+        <AuthProvider>
+          <MyContextProvider>
+            <ThemeContextProvider>
+              <ThemedBody>
+                <SidebarProvider className="h-screen flex flex-col">
+                  <Header />
+                  <main>
+                    <div className="block sm:hidden">
+                      <AppSidebar />
+                    </div>
+                    {children}
+                  </main>
+                  <Footer />
+                </SidebarProvider>
+                <Toaster />
+              </ThemedBody>
+            </ThemeContextProvider>
+          </MyContextProvider>
+        </AuthProvider>
+        {/* </SessionWrapper> */}
+      </body>
     </html>
   );
-  // return (
-  //   <html lang="en">
-  //     <body>{children}</body>
-  //   </html>
-  // );
 }

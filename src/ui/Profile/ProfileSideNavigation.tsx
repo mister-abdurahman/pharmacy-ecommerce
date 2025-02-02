@@ -7,12 +7,14 @@ import { FaCartPlus } from "react-icons/fa6";
 import { AiFillProduct } from "react-icons/ai";
 import { MdContactSupport, MdReviews } from "react-icons/md";
 import { AuthContext } from "@/store/authStore";
+import { auth } from "@/_lib/auth";
 
 // cart, order history, personal details, reviews, message support, items you'll love
 
 function ProfileSideNavigation({ children }: { children: ReactNode }) {
   const pathName = usePathname();
   const { user } = useContext(AuthContext);
+  // const session = await auth();
 
   const navLinks = [
     {

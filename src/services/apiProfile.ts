@@ -1,5 +1,5 @@
-import { supabase } from "@/lib/supabase";
-import { IProfile } from "@/lib/types";
+import { supabase } from "@/_lib/supabase";
+import { IProfile } from "@/_lib/types";
 
 export async function getProfileById(id: string): Promise<IProfile> {
   try {

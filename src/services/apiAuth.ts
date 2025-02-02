@@ -1,5 +1,5 @@
 "use server";
-import { supabase } from "@/lib/supabase";
+import { supabase } from "@/_lib/supabase";
 import { revalidatePath } from "next/cache";
 
 interface signUpFormDetails {

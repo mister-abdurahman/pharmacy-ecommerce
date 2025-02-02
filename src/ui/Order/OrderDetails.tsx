@@ -6,7 +6,7 @@ import paystack from "@/assets/images/paystack-wc.png";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { ReactNode, useContext } from "react";
 import { MyContext } from "@/store/store";
-import { CURRENCY } from "@/lib/constants";
+import { CURRENCY } from "@/_lib/constants";
 
 function OrderDetails({ children }: { children: ReactNode }) {
   const router = useRouter();

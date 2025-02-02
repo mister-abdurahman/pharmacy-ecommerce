@@ -1,6 +1,6 @@
 import ProductCard from "@/components/ProductCard";
 import VerifyPaymentUI from "@/components/VerifyPaymentUI";
-import { IProduct } from "@/lib/types";
+import { IProduct } from "@/_lib/types";
 import { getProducts } from "@/services/apiProducts";
 import { useSearchParams } from "next/navigation";
 import React from "react";

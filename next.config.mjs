@@ -14,6 +14,12 @@ const nextConfig = {
         port: "",
         pathname: "/storage/v1/object/public/**",
       },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
     // unoptimized: true, //we need to set this before build so that Next Image API doent cos issues in static files.
   },

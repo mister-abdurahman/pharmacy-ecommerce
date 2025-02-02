@@ -1,8 +1,8 @@
 "use client";
 import AdjustQuantity from "@/components/AdjustQuantity";
 import { Button } from "@/components/ui/button";
-import { CURRENCY } from "@/lib/constants";
-import { ICart } from "@/lib/types";
+import { CURRENCY } from "@/_lib/constants";
+import { ICart } from "@/_lib/types";
 import { MyContext } from "@/store/store";
 import Image from "next/image";
 import React, { useContext } from "react";
