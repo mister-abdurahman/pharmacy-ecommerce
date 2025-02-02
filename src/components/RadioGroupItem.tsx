@@ -1,7 +1,7 @@
 "use client";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { CURRENCY } from "@/lib/constants";
+import { CURRENCY } from "@/_lib/constants";
 import { useState } from "react";
 
 interface ILocation {

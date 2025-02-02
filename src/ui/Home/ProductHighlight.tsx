@@ -8,7 +8,7 @@ import Link from "next/link";
 import React, { useContext } from "react";
 import { MdShoppingCart } from "react-icons/md";
 import { getProducts } from "@/services/apiProducts";
-import { IProduct } from "@/lib/types";
+import { IProduct } from "@/_lib/types";
 
 async function ProductHighlight({
   heading,

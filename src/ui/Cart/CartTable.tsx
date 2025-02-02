@@ -17,7 +17,7 @@ import { MyContext } from "@/store/store";
 import { MdCancel } from "react-icons/md";
 import AdjustQuantity from "@/components/AdjustQuantity";
 import Link from "next/link";
-import { CURRENCY } from "@/lib/constants";
+import { CURRENCY } from "@/_lib/constants";
 
 function CartTable() {
   const { cart, adjustQuantityOfAProduct, removeItemFromCart } =

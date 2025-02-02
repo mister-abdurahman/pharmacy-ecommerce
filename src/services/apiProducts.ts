@@ -1,5 +1,5 @@
-import { supabase } from "@/lib/supabase";
-import { IBrand, ICart, ICategory, IProduct } from "@/lib/types";
+import { supabase } from "@/_lib/supabase";
+import { IBrand, ICart, ICategory, IProduct } from "@/_lib/types";
 import { boolean } from "zod";
 
 export async function getProducts(): Promise<IProduct[]> {

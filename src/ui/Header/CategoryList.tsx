@@ -1,4 +1,4 @@
-import { ICategory } from "@/lib/types";
+import { ICategory } from "@/_lib/types";
 import Link from "next/link";
 import React from "react";
 

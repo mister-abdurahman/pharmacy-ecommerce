@@ -1,5 +1,5 @@
-import { supabase } from "@/lib/supabase";
-import { ICart, IOrder, IOrderItem } from "@/lib/types";
+import { supabase } from "@/_lib/supabase";
+import { ICart, IOrder, IOrderItem } from "@/_lib/types";
 import { emptyUserCart } from "./apiCart";
 
 export async function createOrder(orderDetails: IOrder, cart: ICart[]) {

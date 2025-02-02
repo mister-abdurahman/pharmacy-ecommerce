@@ -19,7 +19,7 @@ import OrderDetails from "@/ui/Order/OrderDetails";
 import { useContext } from "react";
 import { MyContext } from "@/store/store";
 import { handlePayment } from "@/app/api/payment/paystackInteface";
-import { IProfile } from "@/lib/types";
+import { IProfile } from "@/_lib/types";
 
 const FormSchema = z.object({
   first_name: z

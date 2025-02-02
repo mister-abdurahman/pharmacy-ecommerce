@@ -1,6 +1,6 @@
 import PageContainer from "@/components/PageContainer";
 import Spinner from "@/components/Spinner";
-import { IProduct } from "@/lib/types";
+import { IProduct } from "@/_lib/types";
 import {
   getCategoryById,
   getProducts,
