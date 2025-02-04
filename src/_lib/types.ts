@@ -1,14 +1,15 @@
+// export interface ICart {
+//   id: number;
+//   user_id?: number;
+//   product_id: number;
+//   quantity: number;
+// }
+
 export interface ICartDisplay {
   img_url: string;
   name: string;
   price: number;
   quantity: number;
-}
-
-export interface IBrand {
-  id: number;
-  name: string;
-  description: string;
 }
 
 export interface IOrder {

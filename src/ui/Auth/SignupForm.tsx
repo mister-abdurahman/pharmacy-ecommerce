@@ -91,9 +91,6 @@ function SignUpForm({ closeDialog, setToSIgnin }) {
 
     if (res.success) {
       alert(res.message);
-      alert(
-        "Kindly check your mail inbox and verify your email before you log in"
-      );
       setToSIgnin();
     } else {
       alert(res.error);

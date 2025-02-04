@@ -1,3 +1,4 @@
+import { signOut } from "@/services/apiAuth";
 import ProfileSideNavigation from "@/ui/Profile/ProfileSideNavigation";
 import SignoutButton from "@/ui/Profile/SignoutButton";
 import React, { ReactNode } from "react";

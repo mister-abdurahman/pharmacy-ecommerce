@@ -17,7 +17,10 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { AuthContext } from "@/store/authStore";
-import { IProfile } from "@/_lib/types";
+import { getProductById } from "@/services/apiProducts";
+import { getProfileById } from "@/services/apiProfile";
+import { IProfile } from "@/lib/types";
+import { SubmitButton } from "@/components/SubmitButton";
 
 const formSchema = z.object({
   first_name: z
