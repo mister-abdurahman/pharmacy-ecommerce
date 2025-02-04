@@ -1,6 +1,6 @@
 "use client";
-import { availableLocationsList, CURRENCY } from "@/_lib/constants";
-import { IAvailableLocation } from "@/_lib/types";
+import { availableLocationsList, CURRENCY } from "@/lib/constants";
+import { IAvailableLocation } from "@/lib/types";
 import { useState } from "react";
 
 export function RawRadioGroupDemo({

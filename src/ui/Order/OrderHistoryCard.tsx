@@ -1,5 +1,5 @@
-import { CURRENCY } from "@/_lib/constants";
-import { ICartDisplay } from "@/_lib/types";
+import { CURRENCY } from "@/lib/constants";
+import { ICartDisplay } from "@/lib/types";
 import Image from "next/image";
 import React from "react";
 

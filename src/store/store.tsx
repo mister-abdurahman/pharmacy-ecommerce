@@ -9,7 +9,7 @@ import {
   removeProductFromUserCart,
 } from "@/services/apiCart";
 import { getProductById } from "@/services/apiProducts";
-import { ICart } from "@/_lib/types";
+import { ICart } from "@/lib/types";
 
 interface IAddress {
   address: string;

@@ -7,7 +7,7 @@ import { FaCartPlus } from "react-icons/fa6";
 import { AiFillProduct } from "react-icons/ai";
 import { MdContactSupport, MdReviews } from "react-icons/md";
 import { AuthContext } from "@/store/authStore";
-import { auth } from "@/_lib/auth";
+import { auth } from "@/lib/auth";
 
 // cart, order history, personal details, reviews, message support, items you'll love
 
@@ -60,7 +60,7 @@ function ProfileSideNavigation({ children }: { children: ReactNode }) {
             </a>
           </li>
         ))}
-        {children}
+        <div className="hidden sm:block">{children}</div>
       </ul>
     </nav>
   );

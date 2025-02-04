@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { signIn, signOut } from "next-auth/react";
-import { signInAction } from "@/_lib/actions";
+import { signInAction } from "@/lib/actions";
 
 function SignInButton() {
   return (

@@ -1,5 +1,5 @@
-import { supabase } from "@/_lib/supabase";
-import { ICart } from "@/_lib/types";
+import { supabase } from "@/lib/supabase";
+import { ICart } from "@/lib/types";
 
 export async function addProductToUserCart(cartDetails: ICart) {
   try {

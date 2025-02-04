@@ -1,4 +1,4 @@
-import { auth } from "@/_lib/auth";
+import { auth } from "@/lib/auth";
 import Spinner from "@/components/Spinner";
 import { getProfileById } from "@/services/apiProfile";
 import ProfileForm from "@/ui/Profile/ProfileForm";
